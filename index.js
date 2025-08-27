@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import Person from "./models/person.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import path from "path";
 
 dotenv.config();
 
