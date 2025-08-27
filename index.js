@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 import Person from "./models/person.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import path from "path";
 
 dotenv.config();
 
@@ -98,7 +97,7 @@ app.get("/info", (req, res, next) => {
 
 // Fallback route to serve frontend for non-API requests
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+  res.sendFile(new URL("./dist/index.html", import.meta.url).pathname);
 });
 
 // Error handler middleware
